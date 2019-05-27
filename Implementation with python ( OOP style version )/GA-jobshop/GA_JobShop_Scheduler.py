@@ -5,7 +5,6 @@ Original Author: cheng-man wu
 LinkedIn: www.linkedin.com/in/chengmanwu
 Github: https://github.com/wurmen
 =====
-===== Adaptor: AmazingOrionArm
 """
 
 import numpy as np
@@ -16,21 +15,25 @@ class Scheduler:
         # Initial基本參數
         self.__parameters = {
             # Table
-            "processTimeTable": pd.DataFrame(),
-            "machinesSequenceTable": pd.DataFrame(),
+            "processTimeTable": None,
+            "machinesSequenceTable": None,
             # basic parameters
             "populationSize": 30,
             "crossoverRate": 0.8,
             "mutationRate": 0.8,
             "mutationSelectionRate": 0.8,
-            "maxGeneration": 2000,
+            "maxGeneration": 0.8,
         }
         
-    # 建構子
+    # Initial Constructor
+    def Scheduler(self):
+        print("Construct Initial Scheduler")
+        
+    # Constructor with tablename arguments
     def Scheduler(self, processTimeTableName, machinesSequenceTableName):
         # read table
         self.__parameters["processTimeTable"] = pd.read_csv(processTimeTableName)
-        self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)
+        self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)        
         
     # Accessor，Operator [] overloading
     def __getitem__(self, preferParameter):
@@ -43,9 +46,14 @@ class Scheduler:
             self.__parameters["processTimeTable"] = pd.read_csv(processTimeTableName)
         elif(preferParameter == "machinesSequenceTable"):
             self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)
-        # 一般數值型參數則直接assign
+        # 一般數執行參數則直接assign
         else:
             self.__parameters[preferParameter] = preferValue
+    
+    # 印出所有參數
+    def PrintAllParameters(self):
+        print("Current Parameters List\n------")
+        print(pd.Series(self.__parameters))
     
     # 啟動函式，部分原碼暫時沿用原版本，待後續視情況修改
     def Run(self):
@@ -69,34 +77,35 @@ class Scheduler:
             population_list.append(nxm_random_num) # add to the population_list
             for j in range(num_gene):
                 population_list[i][j]=population_list[i][j]%num_job # convert to job number format, every job appears m times
-    
+    '''
     def NewPupulation(self):
         # 產生初始群體
-        
+
     def ReProduction(self):
         # 產生新群體
-        
+
     def Selection(self):
         # 選擇
-        
+
     def Crossover(self):
         # 交配
-        
+
     def Mutation(self):
         # 突變
-        
+
     def Repair(self):
         # 修復
-        
+
     def CalcFitness(self, c):
         # 計算適應值
-        
+
     def PrintResult(self):
         # 印出計算結果
-        
+
     def PrintFitnessPlot(self):
         # 繪製適應度趨勢圖
-    
+
     def GenerateGanttChart(self):
         # 繪製甘特圖
-        
+    '''
+    
