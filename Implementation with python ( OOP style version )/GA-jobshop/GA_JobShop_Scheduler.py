@@ -5,6 +5,7 @@ Original Author: cheng-man wu
 LinkedIn: www.linkedin.com/in/chengmanwu
 Github: https://github.com/wurmen
 =====
+===== Adaptor: AmazingOrionArm
 """
 
 import numpy as np
