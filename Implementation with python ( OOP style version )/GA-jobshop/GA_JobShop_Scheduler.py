@@ -23,7 +23,7 @@ class Scheduler:
             "crossoverRate": 0.8,
             "mutationRate": 0.8,
             "mutationSelectionRate": 0.8,
-            "maxGeneration": 0.8,
+            "maxGeneration": 2000,
         }
         
     # 建構子
