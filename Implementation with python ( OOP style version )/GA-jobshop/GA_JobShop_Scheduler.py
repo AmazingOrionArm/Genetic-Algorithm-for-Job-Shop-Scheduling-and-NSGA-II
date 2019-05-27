@@ -19,8 +19,8 @@ class Scheduler:
     # 建構子
     def Scheduler(self, processTimeTableName, machinesSequenceTableName):
         # read table
-        self.__processTimeTable = pd.read_csv(processTimeTableName)
-        self.__machinesSequenceTable = pd.read_csv(machinesSequenceTableName)
+        self.__parameters["processTimeTable"] = pd.read_csv(processTimeTableName)
+        self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)
         
     # Accessor，Operator [] overloading
     def __getitem__(self, preferParameter):
@@ -28,5 +28,12 @@ class Scheduler:
     
     # Mutator，Operator [] overloading
     def __setitem__(self, preferParameter, preferValue):
-        self.__parameters[preferParameter] = preferValue
+        # 如果要設定的是Table，則利用該TableName讀取Table，再進行assign
+        if(preferParameter == "processTimeTable"):
+            self.__parameters["processTimeTable"] = pd.read_csv(processTimeTableName)
+        elif(preferParameter == "machinesSequenceTable"):
+            self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)
+        # 一般數執行參數則直接assign
+        else:
+            self.__parameters[preferParameter] = preferValue
         
