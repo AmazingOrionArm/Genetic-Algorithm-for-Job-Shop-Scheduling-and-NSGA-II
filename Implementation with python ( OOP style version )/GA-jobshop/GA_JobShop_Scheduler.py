@@ -19,7 +19,7 @@ class Scheduler:
             "machinesSequenceTable": None,
             # basic parameters
             "populationSize": 30,
-            "crossoverRate": 0.8,
+            "crossoverRate": 0.2,
             "mutationRate": 0.8,
             "mutationSelectionRate": 0.8,
             "maxGeneration": 2000,
