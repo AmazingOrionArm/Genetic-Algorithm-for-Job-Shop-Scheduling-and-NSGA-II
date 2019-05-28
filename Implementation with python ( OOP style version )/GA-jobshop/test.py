@@ -1,4 +1,4 @@
-import jobshopscheduling as jss
+import GAJobShopScheduling as jss
 
 #---Main Function--
 mainScheduler = jss.Scheduler()
