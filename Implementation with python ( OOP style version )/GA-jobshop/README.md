@@ -28,7 +28,7 @@ yourSchedulerName[preferParaName]
 ```python
 yourSchedulerName.PrintAllParameters()
 ```
-當table檔、參數接設定完成後，可使用Run()來開始運行計算
+當table檔、參數皆設定完成後，可使用Run()來開始運行計算
 ```python
 yourSchedulerName.Run()
 ```
