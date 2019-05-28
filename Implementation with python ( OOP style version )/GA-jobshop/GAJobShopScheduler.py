@@ -18,7 +18,6 @@ import datetime
 import copy
 import time
 import matplotlib.pyplot as plt
-%matplotlib inline
 init_notebook_mode(connected=True)
 
 class Scheduler:
@@ -33,7 +32,7 @@ class Scheduler:
             "crossoverRate": 0.8,
             "mutationRate": 0.2,
             "mutationSelectionRate": 0.2,
-            "maxGeneration": 100,
+            "maxGeneration": 2000,
         }
         
     # -
@@ -91,7 +90,7 @@ class Scheduler:
             
         for n in range(self.__parameters["maxGeneration"]):
             #---產生新群體---
-            print("=== Generation:" + str(n) + "===")
+            print("Generation:" + str(n), end='\r')
             self.ReProduction()
             #---
             self.Repair()
