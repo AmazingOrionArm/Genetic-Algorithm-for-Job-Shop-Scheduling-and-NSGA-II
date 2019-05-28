@@ -12,12 +12,14 @@ import pandas as pd
 import plotly
 import plotly.plotly as py
 import plotly.figure_factory as ff
+import plotly.graph_objs as go
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import datetime
 import copy
 import time
 import matplotlib.pyplot as plt
 %matplotlib inline
-plotly.offline.init_notebook_mode()
+init_notebook_mode(connected=True)
 
 class Scheduler:
     def __init__(self):
@@ -236,7 +238,7 @@ class Scheduler:
         # 比較
         for i in range(self.__parameters["populationSize"]*2):
             if self.__chrom_fit[i]<self.__Tbest_now:
-                Tbest_now=self.__chrom_fit[i]
+                self.__Tbest_now=self.__chrom_fit[i]
                 sequence_now=copy.deepcopy(self.__total_chromosome[i])
         if self.__Tbest_now<=self.__Tbest:
             self.__Tbest=self.__Tbest_now
@@ -287,7 +289,7 @@ class Scheduler:
         for m in m_keys:
             for j in j_keys:
                 df.append(dict(Task='Machine %s'%(m), Start='2018-07-14 %s'%(str(j_record[(j,m)][0])), Finish='2018-07-14 %s'%(str(j_record[(j,m)][1])),Resource='Job %s'%(j+1)))
-
+                
         fig = ff.create_gantt(df, index_col='Resource', show_colorbar=True, group_tasks=True, showgrid_x=True, title='Job shop Schedule')
         iplot(fig, filename='GA_job_shop_scheduling')
 
@@ -301,4 +303,5 @@ mainScheduler.Run()
 
 mainScheduler.PrintResult()
 mainScheduler.PrintFitnessPlot()
+mainScheduler.GenerateGanttChart()
 #---
