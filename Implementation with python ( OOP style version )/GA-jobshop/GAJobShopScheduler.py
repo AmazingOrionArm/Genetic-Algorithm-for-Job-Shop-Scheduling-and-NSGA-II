@@ -85,29 +85,29 @@ class Scheduler:
         
         for t in range(self.__parameters["populationSize"]):
             #---產生初始群體---
-            self.NewPupulation(t)
+            self.__NewPupulation(t)
             #---
             
         for n in range(self.__parameters["maxGeneration"]):
             #---產生新群體---
             print("Generation:" + str(n), end='\r')
-            self.ReProduction()
+            self.__ReProduction()
             #---
-            self.Repair()
-            self.Mutation()
-            self.CalcFitness()
-            self.Selection()
-            self.Compare()
+            self.__Repair()
+            self.__Mutation()
+            self.__CalcFitness()
+            self.__Selection()
+            self.__Compare()
             
     
-    def NewPupulation(self, i):
+    def __NewPupulation(self, i):
         # 產生初始群體
         self.__nxm_random_num=list(np.random.permutation(self.__num_gene)) # generate a random permutation of 0 to self.__num_job*num_mc-1
         self.__population_list.append(self.__nxm_random_num)
         for j in range(self.__num_gene):
             self.__population_list[i][j]=self.__population_list[i][j]%self.__num_job # convert to job number format, every job appears m times
         
-    def ReProduction(self):
+    def __ReProduction(self):
         # 產生新群體
         self.__Tbest_now=99999999999
         #--- two point crossover ---
@@ -130,7 +130,7 @@ class Scheduler:
                 self.__offspring_list[S[2*m]]=child_1[:]
                 self.__offspring_list[S[2*m+1]]=child_2[:]        
         
-    def Selection(self):
+    def __Selection(self):
         # 選擇
         pk,qk=[],[]
     
@@ -152,13 +152,9 @@ class Scheduler:
                     if selection_rand[i]>qk[j] and selection_rand[i]<=qk[j+1]:
                         self.__population_list[i]=copy.deepcopy(self.__total_chromosome[j+1])
                         break
+                        
 
-    '''
-    def Crossover(self):
-        # 交配
-    '''
-
-    def Mutation(self):
+    def __Mutation(self):
         # 突變
         for m in range(len(self.__offspring_list)):
             mutation_prob=np.random.rand()
@@ -171,7 +167,7 @@ class Scheduler:
                 self.__offspring_list[m][m_chg[self.__num_mutation_jobs-1]]=t_value_last # move the value of the first mutation position to the last mutation position
 
 
-    def Repair(self):
+    def __Repair(self):
         # 修復
         for m in range(self.__parameters["populationSize"]):
             job_count={}
@@ -203,7 +199,7 @@ class Scheduler:
 
     
     
-    def CalcFitness(self):
+    def __CalcFitness(self):
         # 計算適應值
         self.__total_chromosome=copy.deepcopy(self.__parent_list)+copy.deepcopy(self.__offspring_list) # parent and offspring chromosomes combination
         self.__chrom_fitness,self.__chrom_fit=[],[]
@@ -233,7 +229,7 @@ class Scheduler:
             self.__chrom_fit.append(makespan)
             self.__total_fitness=self.__total_fitness+self.__chrom_fitness[m]
 
-    def Compare(self):
+    def __Compare(self):
         # 比較
         for i in range(self.__parameters["populationSize"]*2):
             if self.__chrom_fit[i]<self.__Tbest_now:
