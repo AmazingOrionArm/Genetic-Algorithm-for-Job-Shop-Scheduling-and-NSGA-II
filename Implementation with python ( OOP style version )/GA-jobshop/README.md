@@ -49,3 +49,6 @@ yourSchedulerName.GenerateGanttChart()
 "mutationSelectionRate": 0.2 #預設0.2，( 即原版本的 mutation_selection_rate ) 
 "maxGeneration": 2000 #預設2000，( 即原版本的 num_iteration ) 
 ```
+
+## 來源說明
+此程式為添加物件導向風格的版本，可更有利於專案中使用，其原版本來自[PO-Lab](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/GA-jobshop/GA_For_Jobshop.md)成員[wurmen](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/GA-jobshop/GA_For_Jobshop.md)
