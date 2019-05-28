@@ -1,1 +1,40 @@
-# 加入物件導向風格的版本
+## 使用說明 - 安裝
+將 **GAJobShopScheduling.py** 和 **\_\_init\_\_.py** 與您的程式放在同個資料夾中，並以下敘述將GAJobShopScheduling.py載入到您的程式中
+```python
+import GAJobShopScheduling
+```
+## 使用說明 - 使用方法
+首先在您的程式中，建構 Scheduler 實體，此時尚未載入資料表格
+```python
+yourSchedulerName = GAJobShopScheduling.Scheduler()
+```
+接著因為本程式 Mutator 採用 Operator [] Overloading 實作，因此載入表格的方式如下
+```python
+yourSchedulerName["processTimeTable"] = yourProcessTimeTableName
+yourSchedulerName["machinesSequenceTable"] = yourMachinesSequenceTable
+```
+載入表格後，您可以繼續設定必要參數，或是不設定直接採用預設值，如需要設定使用方式如下
+```python
+yourSchedulerName[preferParaName] = preferParaValue
+# preferParaName 為您想設定的參數名稱
+# preferParaValue 為您想設定的值
+```
+您也可以直接取得目前的參數值
+```python
+yourSchedulerName[preferParaName]
+# preferParaName 為您想設定的參數名稱
+```
+或是一次印出全部參數的值，他會以pandas series格式輸出
+```python
+yourSchedulerName.PrintAllParameters()
+```
+當table檔、參數接設定完成後，可使用Run()來開始運行計算
+```python
+yourSchedulerName.Run()
+```
+在此期間程式會印出目前的 Generation，您可以查看目前的進度。計算完成後可利用以下敘述分別取得計算結果、適應度值趨勢圖與甘特圖
+```python
+yourSchedulerName.PrintResult()
+yourSchedulerName.PrintFitnessPlot()
+yourSchedulerName.GenerateGanttChart()
+```
