@@ -46,7 +46,7 @@ class Scheduler:
             self.__parameters["processTimeTable"] = pd.read_csv(preferValue, index_col=[0])
         elif(preferParameter == "machinesSequenceTable"):
             self.__parameters["machinesSequenceTable"] = pd.read_csv(preferValue, index_col=[0])
-        # 一般數執行參數則直接assign
+        # 一般數值型參數則直接assign
         else:
             self.__parameters[preferParameter] = preferValue
     
