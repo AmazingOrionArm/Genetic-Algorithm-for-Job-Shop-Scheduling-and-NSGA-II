@@ -51,7 +51,7 @@ yourSchedulerName.GenerateGanttChart()
 ```
 
 ## 使用說明 - 範例
-[示範](https://github.com/AmazingOrionArm/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/Implementation%20with%20python%20(%20OOP%20style%20version%20)/GA-jobshop/test.ipynb)
+[實際範例](https://nbviewer.jupyter.org/github/AmazingOrionArm/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/1749c0db1134c4b752f794feb7556afcba241edc/Implementation%20with%20python%20(%20OOP%20style%20version%20)/GA-jobshop/test.ipynb)
 
 ## 來源說明
 此程式為添加物件導向風格的版本，可更有利於專案中使用，其原版本來自[PO-Lab](https://github.com/PO-LAB/Intelligent-Manufacturing-Systems/blob/master/GA_Application_Job_Shop_Problem/JSP.md)成員[wurmen](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/GA-jobshop/GA_For_Jobshop.md)
