@@ -34,17 +34,7 @@ class Scheduler:
             "mutationSelectionRate": 0.2,
             "maxGeneration": 2000,
         }
-        
-    # -
-    def Scheduler(self):
-        print("Construct Initial Scheduler")
-        
-    # -
-    def Scheduler(self, processTimeTableName, machinesSequenceTableName):
-        # read table
-        self.__parameters["processTimeTable"] = pd.read_csv(processTimeTableName)
-        self.__parameters["machinesSequenceTable"] = pd.read_csv(machinesSequenceTableName)        
-        
+         
     # Accessor，Operator [] overloading
     def __getitem__(self, preferParameter):
         return self.__parameters[preferParameter]
