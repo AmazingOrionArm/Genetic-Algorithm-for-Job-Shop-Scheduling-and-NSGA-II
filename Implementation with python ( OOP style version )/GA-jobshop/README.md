@@ -32,7 +32,7 @@ yourSchedulerName.PrintAllParameters()
 ```python
 yourSchedulerName.Run()
 ```
-在此期間程式會印出目前的 Generation，您可以查看目前的進度。計算完成後可利用以下敘述分別取得計算結果、適應度值趨勢圖與甘特圖
+在此期間程式會印出目前的 Generation，您可以查看目前的進度。計算完成後可利用以下敘述分別取得計算結果、適應值趨勢圖與甘特圖
 ```python
 yourSchedulerName.PrintResult()
 yourSchedulerName.PrintFitnessPlot()
