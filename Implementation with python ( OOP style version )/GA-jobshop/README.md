@@ -1,4 +1,4 @@
-## 使用說明 - 安裝
+## 使用說明 - 載入
 將 **GAJobShopScheduling.py** 和 **\_\_init\_\_.py** 與您的程式放在同個資料夾中，並以下敘述將GAJobShopScheduling.py載入到您的程式中
 ```python
 import GAJobShopScheduling
