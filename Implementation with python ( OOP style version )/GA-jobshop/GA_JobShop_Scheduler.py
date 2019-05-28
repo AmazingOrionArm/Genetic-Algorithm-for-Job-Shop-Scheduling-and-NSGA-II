@@ -292,16 +292,4 @@ class Scheduler:
                 
         fig = ff.create_gantt(df, index_col='Resource', show_colorbar=True, group_tasks=True, showgrid_x=True, title='Job shop Schedule')
         iplot(fig, filename='GA_job_shop_scheduling')
-
-
-#---Main Function--
-mainScheduler = Scheduler()
-mainScheduler["processTimeTable"] = "ProcessingTime.csv"
-mainScheduler["machinesSequenceTable"] = "MachinesSequence.csv"
-
-mainScheduler.Run()
-
-mainScheduler.PrintResult()
-mainScheduler.PrintFitnessPlot()
-mainScheduler.GenerateGanttChart()
-#---
+        
