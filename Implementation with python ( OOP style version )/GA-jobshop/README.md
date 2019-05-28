@@ -11,7 +11,7 @@ yourSchedulerName = GAJobShopScheduling.Scheduler()
 接著因為本程式 Mutator 採用 Operator [] Overloading 實作，因此載入表格的方式如下
 ```python
 yourSchedulerName["processTimeTable"] = yourProcessTimeTableName
-yourSchedulerName["machinesSequenceTable"] = yourMachinesSequenceTable
+yourSchedulerName["machinesSequenceTable"] = yourMachinesSequenceTableName
 ```
 載入表格後，您可以繼續設定必要參數，或是不設定直接採用預設值，如需要設定使用方式如下
 ```python
