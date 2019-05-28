@@ -38,3 +38,14 @@ yourSchedulerName.PrintResult()
 yourSchedulerName.PrintFitnessPlot()
 yourSchedulerName.GenerateGanttChart()
 ```
+
+## 使用說明 - 參數清單對應及其預設值
+```python
+"processTimeTable": None #必需設定，.csv檔 ( 修改原版本方案 )
+"machinesSequenceTable": None #必須設定，.csv檔 ( 修改原版本方案 )
+"populationSize": 30 #預設30，( 及原版本的 population_size ) 
+"crossoverRate": 0.8 #預設0.8，( 及原版本的 crossover_rate ) 
+"mutationRate": 0.2 #預設0.2，( 及原版本的 mutation_rate ) 
+"mutationSelectionRate": 0.2 #預設0.2，( 及原版本的 mutation_selection_rate ) 
+"maxGeneration": 2000 #預設2000，( 及原版本的 num_iteration ) 
+```
