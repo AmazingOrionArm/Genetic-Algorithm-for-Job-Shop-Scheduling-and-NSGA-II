@@ -15,6 +15,6 @@
 |2018|NSGA-II|[Documentation](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/NSGA-II/NSGA-II.md) / [Example](https://wurmen.github.io/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/implementation%20with%20python/NSGA-II/Example_NSGAII.html) / [code](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/NSGA-II/NSGA-II%20code.py) / [Folder](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/tree/master/implementation%20with%20python/NSGA-II)|
 
 ## 以下為改編者添加內容：
-* 預計新增python(OOP版本)(Job-Shop Scheduling完成)、C++版本，優先製作Job-Shop Scheduling
+* 預計新增python(OOP版本)([Job-Shop Scheduling](https://github.com/AmazingOrionArm/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/tree/master/Implementation%20with%20python%20(%20OOP%20style%20version%20)/GA-jobshop)完成)、C++版本，優先製作Job-Shop Scheduling
 * 改編動機：改編人因為目前大學專題的內容需要使用到Job-Shop Scheduling，因緣際會下看到這篇，因此希望可以以原作者的原始碼與流程為基礎，改寫為OOP的版本以利在專題中使用，因改編人亦有基本C++程式能力，因此如有餘裕，也將會撰寫C++版本已利於在其他環境用途下使用。
 * Reference : [PO-Lab](https://github.com/PO-LAB/Intelligent-Manufacturing-Systems/blob/master/GA_Application_Job_Shop_Problem/JSP.md)
